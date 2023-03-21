@@ -1,0 +1,5 @@
+SELECT u.nama_user, b.nama_barang, t.harga_barang FROM transaksi t INNER JOIN barang b ON t.id_barang=b.id_barang INNER JOIN `user` u ON t.id_user=u.id_user;
+
+SELECT b.nama_barang, SUM(t.harga_barang) FROM barang b 
+LEFT JOIN transaksi t on b.id_barang= t.id_barang 
+GROUP BY b.id_barang ORDER by b.nama_barang;
